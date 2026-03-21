@@ -1,4 +1,5 @@
 const std = @import("std");
+
 const num_wasm = @import("num_wasm");
 
 pub fn main() !void {
