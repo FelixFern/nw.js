@@ -1,5 +1,3 @@
-    
-
 # `num-wasm` — NumPy-like Library in Zig → WASM
 
 ## Architecture
@@ -53,7 +51,7 @@ num-wasm/
 - [X] **2.5** Implement `getItem(self, indices) → f64` — calls `flatIndex`, returns `self.data[flat]`
 - [X] **2.6** Implement `setItem(self, indices, value)` — calls `flatIndex`, writes `self.data[flat] = value`
 - [X] **2.7** Update `src/root.zig` to re-export: `pub const NDArray = @import("ndarray.zig").NDArray;`
-- [ ] **2.8** Write tests: create `(3, 4)` array, set/get values, verify `flatIndex` math, verify memory cleanup with `std.testing.allocator`
+- [X] **2.8** Write tests: create `(3, 4)` array, set/get values, verify `flatIndex` math, verify memory cleanup with `std.testing.allocator`
 
 **Index math** (no strides needed):
 
@@ -70,13 +68,12 @@ General formula: `flat = Σ(indices[d] * product(shape[d+1..]))`
 
 **Goal**: Equivalent of `np.zeros()`, `np.ones()`, `np.arange()`, etc.
 
-- [ ] **3.1** `zeros(allocator, shape) → NDArray` — init + fill data with `0.0` using `@memset`
-- [ ] **3.2** `ones(allocator, shape) → NDArray` — init + fill data with `1.0`
-- [ ] **3.3** `full(allocator, shape, value) → NDArray` — init + fill data with arbitrary value
-- [ ] **3.4** `arange(allocator, start, stop, step) → NDArray` — compute count = `@intFromFloat(@ceil((stop - start) / step))`, create 1D array `shape = [count]`, fill with `start, start+step, start+2*step, ...`
-- [ ] **3.5** `linspace(allocator, start, stop, count) → NDArray` — 1D array of `count` evenly spaced values from `start` to `stop` inclusive
-- [ ] **3.6** `fromSlice(allocator, data, shape) → NDArray` — copy a `[]const f64` into a new NDArray with given shape. Validate `data.len == product(shape)`
-- [ ] **3.7** Export creation functions via `wasm_api.zig`, test from Node.js
+- [X] **3.1** `zeros(allocator, shape) → NDArray` — init + fill data with `0.0` using `@memset`
+- [X] **3.2** `ones(allocator, shape) → NDArray` — init + fill data with `1.0`
+- [X] **3.3** `full(allocator, shape, value) → NDArray` — init + fill data with arbitrary value
+- [X] **3.4** `arange(allocator, start, stop, step) → NDArray` — compute count = `@intFromFloat(@ceil((stop - start) / step))`, create 1D array `shape = [count]`, fill with `start, start+step, start+2*step, ...`
+- [X] **3.5** `linspace(allocator, start, stop, count) → NDArray` — 1D array of `count` evenly spaced values from `start` to `stop` inclusive
+- [ ] **3.6** Export creation functions via `wasm_api.zig`, test from Node.js
 
 ---
 
