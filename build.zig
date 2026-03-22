@@ -56,19 +56,10 @@ pub fn build(b: *std.Build) void {
     wasm.entry = .disabled; // No _start — JS calls exports directly
     wasm.rdynamic = true; // Make `export fn` symbols visible to JS
 
-    // Install .wasm to zig-out/bin/
     const install_wasm = b.addInstallArtifact(wasm, .{});
-
-    // Copy .wasm to tests/ for easy serving
-    const copy_wasm = b.addInstallFile(
-        wasm.getEmittedBin(),
-        "../tests/num-wasm.wasm",
-    );
-    copy_wasm.step.dependOn(&wasm.step);
 
     const wasm_step = b.step("wasm", "Build WASM binary");
     wasm_step.dependOn(&install_wasm.step);
-    wasm_step.dependOn(&copy_wasm.step);
 
     // -------------------------------------------------------
     // Tests  —  `zig build test`

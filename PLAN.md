@@ -73,7 +73,7 @@ General formula: `flat = Σ(indices[d] * product(shape[d+1..]))`
 - [X] **3.3** `full(allocator, shape, value) → NDArray` — init + fill data with arbitrary value
 - [X] **3.4** `arange(allocator, start, stop, step) → NDArray` — compute count = `@intFromFloat(@ceil((stop - start) / step))`, create 1D array `shape = [count]`, fill with `start, start+step, start+2*step, ...`
 - [X] **3.5** `linspace(allocator, start, stop, count) → NDArray` — 1D array of `count` evenly spaced values from `start` to `stop` inclusive
-- [ ] **3.6** Export creation functions via `wasm_api.zig`, test from Node.js
+- [X] **3.6** Export creation functions via `wasm_api.zig`, test from Node.js
 
 ---
 
