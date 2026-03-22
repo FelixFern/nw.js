@@ -1,5 +1,6 @@
 const std = @import("std");
 const Allocator = std.mem.Allocator;
+const testing = std.testing;
 
 pub const NDArray = struct {
     data: []f64,
@@ -51,8 +52,6 @@ pub const NDArray = struct {
         return flat_index;
     }
 };
-
-const testing = std.testing;
 
 test "init allocates correct size" {
     var arr = try NDArray.init(testing.allocator, &[_]usize{ 3, 4 });
