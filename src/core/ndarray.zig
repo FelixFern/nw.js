@@ -38,7 +38,7 @@ pub const NDArray = struct {
         self.data[flat_index] = value;
     }
 
-    pub fn flatIndex(self: *const NDArray, indices: []const usize) usize {
+    fn flatIndex(self: *const NDArray, indices: []const usize) usize {
         var flat_index: usize = 0;
         var multiplier: usize = 1;
         var i: usize = self.ndim;
