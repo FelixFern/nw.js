@@ -81,9 +81,9 @@ General formula: `flat = Σ(indices[d] * product(shape[d+1..]))`
 
 **Goal**: `reshape`, `transpose`, `flatten`. All return new arrays (copies).
 
-- [ ] **4.1** `reshape(self, allocator, new_shape) → NDArray` — validate `product(new_shape) == product(old_shape)`, create new NDArray, copy data (`@memcpy`), assign new shape
-- [ ] **4.2** `transpose(self, allocator) → NDArray` — 2D only. Create new `(cols, rows)` array, copy `result[j][i] = self[i][j]`
-- [ ] **4.3** `flatten(self, allocator) → NDArray` — reshape to `[total_elements]`
+- [X] **4.1** `reshape(self, allocator, new_shape) → NDArray` — validate `product(new_shape) == product(old_shape)`, create new NDArray, copy data (`@memcpy`), assign new shape
+- [X] **4.2** `transpose(self, allocator) → NDArray` — 2D only. Create new `(cols, rows)` array, copy `result[j][i] = self[i][j]`
+- [X] **4.3** `flatten(self, allocator) → NDArray` — reshape to `[total_elements]`
 - [ ] **4.4** `squeeze(self, allocator) → NDArray` — remove dimensions of size 1 from shape, copy data
 - [ ] **4.5** Tests: reshape `(2, 6)` → `(3, 4)`, verify values preserved. Transpose `(3, 4)` → verify `(4, 3)` with correct element positions
 

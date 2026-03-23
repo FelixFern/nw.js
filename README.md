@@ -1,4 +1,4 @@
-# num-wasm
+# nw.js
 
 A NumPy-like array library written in Zig, compiled to WebAssembly for JavaScript/TypeScript.
 
@@ -68,17 +68,17 @@ These simplifications keep the codebase approachable. They can be upgraded later
 
 ## Roadmap
 
-| Phase | Feature | Status |
-|-------|---------|--------|
-| 1 | Toolchain setup, hello WASM | Done |
-| 2 | NDArray core data structure | Done |
-| 3 | Array creation functions | Done |
-| 4 | Shape manipulation (reshape, transpose, flatten) | Upcoming |
-| 5 | Broadcasting | Upcoming |
-| 6 | Element-wise operations (add, multiply, sqrt, etc.) | Upcoming |
-| 7 | Reduction operations (sum, mean, max, min) | Upcoming |
-| 8 | Slicing and indexing | Upcoming |
-| 9 | Linear algebra (dot, matmul) | Upcoming |
-| 10 | JS glue library (clean API) | Upcoming |
+| Phase | Feature                                             | Status   |
+| ----- | --------------------------------------------------- | -------- |
+| 1     | Toolchain setup, hello WASM                         | Done     |
+| 2     | NDArray core data structure                         | Done     |
+| 3     | Array creation functions                            | Done     |
+| 4     | Shape manipulation (reshape, transpose, flatten)    | Upcoming |
+| 5     | Broadcasting                                        | Upcoming |
+| 6     | Element-wise operations (add, multiply, sqrt, etc.) | Upcoming |
+| 7     | Reduction operations (sum, mean, max, min)          | Upcoming |
+| 8     | Slicing and indexing                                | Upcoming |
+| 9     | Linear algebra (dot, matmul)                        | Upcoming |
+| 10    | JS glue library (clean API)                         | Upcoming |
 
 See [PLAN.md](./PLAN.md) for detailed implementation plans.
